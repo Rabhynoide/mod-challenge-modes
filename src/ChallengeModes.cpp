@@ -713,7 +713,7 @@ public:
         }
     }
 
-    bool CanUseItem(Player* player, ItemTemplate const* proto, InventoryResult& /*result*/) override
+    bool OnPlayerCanUseItem(Player* player, ItemTemplate const* proto, InventoryResult& /*result*/) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_IRON_MAN, player))
         {
