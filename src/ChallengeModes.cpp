@@ -679,7 +679,7 @@ public:
         return false;
     }
 
-    void OnLearnSpell(Player* player, uint32 spellID) override
+    void OnPlayerLearnSpell(Player* player, uint32 spellID) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_IRON_MAN, player))
         {
