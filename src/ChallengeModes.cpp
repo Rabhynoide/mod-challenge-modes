@@ -748,7 +748,7 @@ public:
         return true;
     }
 
-    bool CanGroupInvite(Player* player, std::string& /*membername*/) override
+    bool OnPlayerCanGroupInvite(Player* player, std::string& /*membername*/) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_IRON_MAN, player))
         {
