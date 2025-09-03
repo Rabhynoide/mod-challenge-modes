@@ -427,7 +427,7 @@ public:
         player->GetSession()->KickPlayer("Hardcore character died");
     }
 
-    void OnPVPKill(Player* /*killer*/, Player* killed) override
+    void OnPlayerPVPKill(Player* /*killer*/, Player* killed) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_HARDCORE, killed))
         {
