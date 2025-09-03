@@ -330,7 +330,7 @@ public:
         return (mapToCheck->find(key) != mapToCheck->end());
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* /*victim*/, uint8 /*xpSource*/) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(settingName, player))
         {
@@ -457,9 +457,9 @@ public:
         player->GetSession()->KickPlayer("Hardcore character died");
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
@@ -493,9 +493,9 @@ public:
         player->SetMoney(0);
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
@@ -522,9 +522,9 @@ public:
         return pItem->GetGuidValue(ITEM_FIELD_CREATOR) == player->GetGUID();
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
@@ -547,9 +547,9 @@ public:
         return pItem->GetTemplate()->Quality <= ITEM_QUALITY_NORMAL;
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
@@ -563,9 +563,9 @@ class ChallengeMode_SlowXpGain : public ChallengeMode
 public:
     ChallengeMode_SlowXpGain() : ChallengeMode("ChallengeMode_SlowXpGain", SETTING_SLOW_XP_GAIN) {}
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
@@ -579,9 +579,9 @@ class ChallengeMode_VerySlowXpGain : public ChallengeMode
 public:
     ChallengeMode_VerySlowXpGain() : ChallengeMode("ChallengeMode_VerySlowXpGain", SETTING_VERY_SLOW_XP_GAIN) {}
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
@@ -595,7 +595,7 @@ class ChallengeMode_QuestXpOnly : public ChallengeMode
 public:
     ChallengeMode_QuestXpOnly() : ChallengeMode("ChallengeMode_QuestXpOnly", SETTING_QUEST_XP_ONLY) {}
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_QUEST_XP_ONLY, player))
         {
@@ -611,7 +611,7 @@ public:
         }
         else
         {
-            ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+            ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
         }
     }
 
@@ -636,9 +636,9 @@ public:
         player->KillPlayer();
     }
 
-    void OnGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
+    void OnPlayerGiveXP(Player* player, uint32& amount, Unit* victim, uint8 xpSource) override
     {
-        ChallengeMode::OnGiveXP(player, amount, victim, xpSource);
+        ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
     void OnLevelChanged(Player* player, uint8 oldlevel) override
