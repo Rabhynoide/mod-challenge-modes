@@ -757,7 +757,7 @@ public:
         return false;
     }
 
-    bool CanGroupAccept(Player* player, Group* /*group*/) override
+    bool OnPlayerCanGroupAccept(Player* player, Group* /*group*/) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_IRON_MAN, player))
         {
