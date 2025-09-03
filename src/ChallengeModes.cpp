@@ -651,7 +651,7 @@ public:
         ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 
-    void OnTalentsReset(Player* player, bool /*noCost*/) override
+    void OnPlayerTalentsReset(Player* player, bool /*noCost*/) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_IRON_MAN, player))
         {
