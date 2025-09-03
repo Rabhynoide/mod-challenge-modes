@@ -339,7 +339,7 @@ public:
         amount *= sChallengeModes->getXpBonusForChallenge(settingName);
     }
 
-void OnLevelChanged(Player* player, uint8 /*oldlevel*/) override
+void OnPlayerLevelChanged(Player* player, uint8 /*oldlevel*/) override
 {
     if (!sChallengeModes->challengeEnabledForPlayer(settingName, player))
     {
@@ -462,9 +462,9 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -498,9 +498,9 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -527,9 +527,9 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -552,9 +552,9 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -568,9 +568,9 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -584,9 +584,9 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -615,9 +615,9 @@ public:
         }
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 };
 
@@ -641,14 +641,14 @@ public:
         ChallengeMode::OnPlayerGiveXP(player, amount, victim, xpSource);
     }
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
         if (!sChallengeModes->challengeEnabledForPlayer(SETTING_IRON_MAN, player))
         {
             return;
         }
         player->SetFreeTalentPoints(0); // Remove all talent points
-        ChallengeMode::OnLevelChanged(player, oldlevel);
+        ChallengeMode::OnPlayerLevelChanged(player, oldlevel);
     }
 
     void OnTalentsReset(Player* player, bool /*noCost*/) override
